@@ -9,43 +9,45 @@
 </style>
 </head>
 <body><main>
-<header><div class="eyebrow">🔥 HOT ALLIANCE • KINGDOM #2487</div><h1>TG3 + Feast + KvK Calculator</h1><p>Slide to update your inventory. The plan and Discord-ready message recalculate instantly.</p><div class="pill">Pack 2 + Pack 3 already included • Pack 4 not purchased</div></header>
+<header><div class="eyebrow">🔥 HOT ALLIANCE • KINGDOM #2487</div><h1>TG3 + Feast + KvK Calculator</h1><p>Slide to update your inventory. The plan and Discord-ready message recalculate instantly.</p><div class="pill">Start at 0 • No purchases selected • Set your own numbers</div></header>
 <section class="panel"><h2>🎯 Your live inventory</h2>
-<div class="inputrow"><label for="tgNum">Current Truegold</label><input type="number" id="tgNum" min="0" max="20000" step="1" value="979"></div><input class="slider" type="range" id="tgSlider" min="0" max="6000" step="1" value="979"><div class="hint">Working estimate: 919 reported + 60 from purchased Pack 3. Edit if your game shows a different total.</div>
-<div class="inputrow"><label for="hamNum">Current Forgehammers</label><input type="number" id="hamNum" min="0" max="10000" step="1" value="395"></div><input class="slider" type="range" id="hamSlider" min="0" max="1000" step="1" value="395"><div class="hint">Last confirmed: 395. Change this after any new Bear Trap or other rewards.</div>
-<div class="grid"><div class="stat"><div class="label">Need for TG3 now</div><div class="v gold" id="tgNeedNow">2,966</div><div class="detail">Estimated minimum full building route: 3,945 TG</div></div><div class="stat"><div class="label">Need for 500 hammers now</div><div class="v gold" id="hamNeedNow">105</div><div class="detail">Before planned rewards or purchases</div></div></div>
+<div class="inputrow"><label for="tgNum">Current Truegold</label><input type="number" id="tgNum" min="0" max="20000" step="1" value="0"></div><input class="slider" type="range" id="tgSlider" min="0" max="6000" step="1" value="0"><div class="hint">Enter the Truegold you already own, including any completed purchases. Only select packs below if you plan to buy them next.</div>
+<div class="inputrow"><label for="hamNum">Current Forgehammers</label><input type="number" id="hamNum" min="0" max="10000" step="1" value="0"></div><input class="slider" type="range" id="hamSlider" min="0" max="1000" step="1" value="0"><div class="hint">Enter the Forgehammers currently in your inventory. Only add future rewards below.</div>
+<div class="grid"><div class="stat"><div class="label">Need for TG3 now</div><div class="v gold" id="tgNeedNow">3,945</div><div class="detail">Estimated minimum full building route: 3,945 TG</div></div><div class="stat"><div class="label">Need for 500 hammers now</div><div class="v gold" id="hamNeedNow">500</div><div class="detail">Before planned rewards or purchases</div></div></div>
 </section>
 <div class="cols"><section class="panel"><h2>🛒 Purchases & Truegold</h2><div class="checks">
+<label class="check"><input type="checkbox" id="pack2"><div><b>Autumn Blessing Pack 2 — $4.99</b><span>+30 TG, 100 Feast Bags, 8 Harvest chests, +2,500 Top-up points</span></div></label>
+<label class="check"><input type="checkbox" id="pack3"><div><b>Autumn Blessing Pack 3 — $9.99</b><span>+60 TG, 160 Feast Bags, 16 Harvest chests, +5,000 Top-up points</span></div></label>
 <label class="check"><input type="checkbox" id="pack4"><div><b>Autumn Blessing Pack 4 — $19.99</b><span>+100 TG, 220 Feast Bags, 32 Harvest chests, 60h speedups, +10,000 Top-up points</span></div></label>
-<label class="check"><input type="checkbox" id="weekly"><div><b>Renew TG Weekly Card — $4.99</b><span>When available: +20 TG immediately, then +12 TG per daily claim. +2,500 Top-up points</span></div></label>
+<label class="check"><input type="checkbox" id="weekly"><div><b>Truegold Weekly Card — $4.99</b><span>When available: +20 TG immediately, then +12 TG per daily claim. +2,500 Top-up points</span></div></label>
 </div>
-<div class="inputrow"><label for="dailyNum">New weekly-card daily claims before KvK</label><input type="number" id="dailyNum" min="0" max="7" value="5"></div><input class="slider" type="range" id="dailySlider" min="0" max="7" value="5"><div class="hint">Used only if Weekly Card is checked. Up to seven claims in total; number before Prep depends on your actual reset timing.</div>
-<div class="inputrow"><label for="extraTgNum">Other Truegold from packs/rewards</label><input type="number" id="extraTgNum" min="0" max="50000" value="0"></div><input class="slider" type="range" id="extraTgSlider" min="0" max="5000" step="1" value="0"><div class="hint">Add Pack 5 or other deals here only after you know the actual quantity. Don't double-count purchases already in your current balance.</div>
+<div class="inputrow"><label for="dailyNum">New weekly-card daily claims before KvK</label><input type="number" id="dailyNum" min="0" max="7" value="0"></div><input class="slider" type="range" id="dailySlider" min="0" max="7" value="0"><div class="hint">Used only if Weekly Card is checked. Up to seven claims in total; number before Prep depends on your actual reset timing.</div>
+<div class="inputrow"><label for="extraTgNum">Other Truegold from packs/rewards</label><input type="number" id="extraTgNum" min="0" max="50000" value="0"></div><input class="slider" type="range" id="extraTgSlider" min="0" max="5000" step="1" value="0"><div class="hint">Add Truegold from other *future* purchases or rewards here. Never count the same Truegold both in current balance and planned purchases.</div>
 </section><section class="panel"><h2>🔨 Hammers before KvK</h2>
-<div class="inputrow"><label for="bearsNum">Bear Traps still to collect</label><input type="number" id="bearsNum" min="0" max="10" value="3"></div><input class="slider" type="range" id="bearsSlider" min="0" max="6" value="3"><div class="hint">10 hammers per trap. Default: Nov 25, 27, 29; remove any already counted in inventory.</div>
+<div class="inputrow"><label for="bearsNum">Bear Traps still to collect</label><input type="number" id="bearsNum" min="0" max="10" value="0"></div><input class="slider" type="range" id="bearsSlider" min="0" max="6" value="0"><div class="hint">Estimate 10 hammers per trap only if that matches your personal damage rewards. Do not include traps already counted in current inventory.</div>
 <div class="inputrow"><label for="feastNum">Feast 3-hammer daily chests</label><input type="number" id="feastNum" min="0" max="7" value="0"></div><input class="slider" type="range" id="feastSlider" min="0" max="7" value="0"><div class="hint">Count only milestones you expect to complete and claim before KvK.</div>
 <div class="checks"><label class="check"><input type="checkbox" id="fair"><div><b>Champagne Fair (+10 hammers)</b><span>Costs 5,000 vouchers; assumes all 10 remain available</span></div></label><label class="check"><input type="checkbox" id="arena"><div><b>Arena Shop (+5 hammers)</b><span>Only if purchase limit and tokens are available</span></div></label></div>
 <div class="inputrow"><label for="extraHamNum">Other hammer packs/rewards</label><input type="number" id="extraHamNum" min="0" max="10000" value="0"></div><input class="slider" type="range" id="extraHamSlider" min="0" max="200" value="0"><div class="hint">Add confirmed hammer packs and other sources; don't count delayed rewards early.</div>
 </section></div>
-<section class="panel"><h2>📊 Projected totals</h2><div class="grid"><div class="stat"><div class="label">Projected Truegold before KvK</div><div class="v gold" id="tgProjected">979</div><div class="detail" id="tgLeft">2,966 still needed for TG3</div><div class="progress"><div id="tgBar"></div></div></div><div class="stat"><div class="label">Projected hammers before KvK</div><div class="v gold" id="hamProjected">425</div><div class="detail" id="hamLeft">75 still needed for 500</div><div class="progress"><div id="hamBar"></div></div></div></div>
-<hr class="line"><div class="pair"><span>Truegold after full 7-day card, if selected</span><strong id="tgFullCard">979</strong></div><div class="pair"><span>Top-up points (starting at 15,000)</span><strong id="topupVal">15,000</strong></div><div class="pair"><span>Remaining to 30,000-point skin tier</span><strong id="topupLeft">15,000</strong></div><div class="pair"><span>Known planned pack spend</span><strong id="cost">$0.00</strong></div><div class="pair"><span>Feast Bags from unbought Pack 4</span><strong id="bags">0</strong></div><div class="inline-note">The 3,945-TG route assumes required buildings are already level 30 and no Truegold stages have been completed. Confirm costs and prerequisites in game before spending.</div></section>
+<section class="panel"><h2>📊 Projected totals</h2><div class="grid"><div class="stat"><div class="label">Projected Truegold before KvK</div><div class="v gold" id="tgProjected">0</div><div class="detail" id="tgLeft">3,945 still needed for TG3</div><div class="progress"><div id="tgBar"></div></div></div><div class="stat"><div class="label">Projected hammers before KvK</div><div class="v gold" id="hamProjected">0</div><div class="detail" id="hamLeft">500 still needed for 500</div><div class="progress"><div id="hamBar"></div></div></div></div>
+<hr class="line"><div class="pair"><span>Truegold after full 7-day card, if selected</span><strong id="tgFullCard">0</strong></div><div class="inputrow"><label for="topupNum">Current Top-up points already earned</label><input type="number" id="topupNum" min="0" max="1000000" value="0"></div><input class="slider" type="range" id="topupSlider" min="0" max="50000" step="500" value="0"><div class="hint">Start at 0. Enter points already shown in your event; selecting future packs adds their points on top.</div><div class="pair"><span>Projected Top-up points</span><strong id="topupVal">0</strong></div><div class="pair"><span>Remaining to 30,000-point skin tier</span><strong id="topupLeft">30,000</strong></div><div class="pair"><span>Known planned pack spend</span><strong id="cost">$0.00</strong></div><div class="pair"><span>Feast Bags from selected future packs</span><strong id="bags">0</strong></div><div class="inline-note">The 3,945-TG goal represents a full TC30 → TG3 Town Center route if all prerequisite buildings are level 30 and no TG upgrades are completed. If your account already has TG building stages, your remaining requirement may be smaller. Verify in-game costs before purchasing.</div></section>
 <section class="panel"><h2>⚔️ KvK score reference</h2><div class="pair"><span>Full 3,945 TG, at 2,000 pts each</span><strong>7,890,000</strong></div><div class="pair"><span>500 hammers, at 4,000 pts each</span><strong>2,000,000</strong></div><div class="pair"><span>70 widgets (Marlin 50 + Hilde 20), at 8,000 pts</span><strong>560,000</strong></div><div class="pair"><span>10 Mithril, at 40,000 pts each</span><strong>400,000</strong></div><hr class="line"><div class="pair"><b>Full theoretical total</b><strong class="gold">10,850,000 points</strong></div><p class="small">Reference only, using previously discussed point rates. You score only by spending on eligible stages, with the required construction speedups, gear and materials. This is not a ranking guarantee.</p></section>
 <section class="panel"><h2>📋 Copy your updated HOT plan</h2><p class="small">The text below stays in sync with every slider and checkbox. Copy it directly to Discord or another chat.</p><textarea id="summary" aria-label="Copyable plan text" spellcheck="false" readonly></textarea><div class="actions"><button class="button" id="copy">📋 Copy summary</button><button class="button secondary" id="reset">↺ Reset sliders</button></div><div class="small" id="copyStatus" aria-live="polite"></div></section>
-<footer>Standalone offline calculator. No login or web connection required. Your slider settings remain in this page only and do not change your Kingshot inventory.</footer>
+<footer>Standalone offline calculator. No login or web connection required. Each member can enter their own balances. Calculator values are not connected to Kingshot and are not saved or shared automatically.</footer>
 </main><script>
 (()=>{'use strict';
 const $=id=>document.getElementById(id), fmt=n=>Math.round(n).toLocaleString('en-US');
-const pairs=[['tg',979,0,20000],['ham',395,0,10000],['daily',5,0,7],['extraTg',0,0,50000],['bears',3,0,10],['feast',0,0,7],['extraHam',0,0,10000]];
+const pairs=[['tg',0,0,20000],['ham',0,0,10000],['daily',0,0,7],['extraTg',0,0,50000],['bears',0,0,10],['feast',0,0,7],['extraHam',0,0,10000],['topup',0,0,1000000]];
 function numberValue(id){let n=Number($(id+'Num').value);return Number.isFinite(n)?Math.max(0,Math.floor(n)):0}
 function clamp(n,min,max){return Math.min(max,Math.max(min,n))}
 for(const [id,initial,min,max] of pairs){let num=$(id+'Num'),slider=$(id+'Slider');num.addEventListener('input',()=>{if(num.value==='')return;let n=clamp(numberValue(id),min,max);slider.value=clamp(n,Number(slider.min),Number(slider.max));calculate()});num.addEventListener('change',()=>{num.value=clamp(numberValue(id),min,max);slider.value=clamp(Number(num.value),Number(slider.min),Number(slider.max));calculate()});slider.addEventListener('input',()=>{num.value=slider.value;calculate()})}
-['pack4','weekly','fair','arena'].forEach(id=>$(id).addEventListener('change',calculate));
-function calculate(){const v=id=>numberValue(id),pack=$('pack4').checked,weekly=$('weekly').checked,fair=$('fair').checked,arena=$('arena').checked;
+['pack2','pack3','pack4','weekly','fair','arena'].forEach(id=>$(id).addEventListener('change',calculate));
+function calculate(){const v=id=>numberValue(id),pack2=$('pack2').checked,pack3=$('pack3').checked,pack4=$('pack4').checked,weekly=$('weekly').checked,fair=$('fair').checked,arena=$('arena').checked;
 const tg=v('tg'),ham=v('ham'),claims=clamp(v('daily'),0,7),othersTG=v('extraTg'),othersHam=v('extraHam');
-const pTG=tg+(pack?100:0)+(weekly?20+12*claims:0)+othersTG;
-const allTG=tg+(pack?100:0)+(weekly?104:0)+othersTG;
+const pTG=tg+(pack2?30:0)+(pack3?60:0)+(pack4?100:0)+(weekly?20+12*claims:0)+othersTG;
+const allTG=tg+(pack2?30:0)+(pack3?60:0)+(pack4?100:0)+(weekly?104:0)+othersTG;
 const pHam=ham+v('bears')*10+v('feast')*3+(fair?10:0)+(arena?5:0)+othersHam;
-const topup=15000+(pack?10000:0)+(weekly?2500:0);
+const topup=v('topup')+(pack2?2500:0)+(pack3?5000:0)+(pack4?10000:0)+(weekly?2500:0);
 $('tgNeedNow').textContent=fmt(Math.max(0,3945-tg));$('hamNeedNow').textContent=fmt(Math.max(0,500-ham));
 $('tgProjected').textContent=fmt(pTG);$('hamProjected').textContent=fmt(pHam);
 const tgShort=Math.max(0,3945-pTG),hamShort=Math.max(0,500-pHam);
@@ -53,7 +55,8 @@ $('tgLeft').textContent=tgShort?fmt(tgShort)+' still needed for TG3':'TG3 Truego
 $('hamLeft').textContent=hamShort?fmt(hamShort)+' still needed for 500':'500-hammer target reached (+ '+fmt(pHam-500)+')';
 $('tgBar').style.width=Math.min(100,pTG/3945*100)+'%';$('hamBar').style.width=Math.min(100,pHam/500*100)+'%';
 $('tgFullCard').textContent=fmt(allTG);$('topupVal').textContent=fmt(topup);$('topupLeft').textContent=fmt(Math.max(0,30000-topup));
-$('cost').textContent='$'+((pack?19.99:0)+(weekly?4.99:0)).toFixed(2);$('bags').textContent=pack?'220':'0';
+const plannedCost=(pack2?4.99:0)+(pack3?9.99:0)+(pack4?19.99:0)+(weekly?4.99:0);
+$('cost').textContent='$'+plannedCost.toFixed(2);$('bags').textContent=fmt((pack2?100:0)+(pack3?160:0)+(pack4?220:0));
 const lines=[
 '🔥 HOT | TG3 + FEAST + KvK PLAN',
 'Kingdom #2487 • TC30 → TG3',
@@ -63,7 +66,9 @@ const lines=[
 '🔨 Hammers: '+fmt(ham)+' / 500 (need '+fmt(Math.max(0,500-ham))+')',
 '',
 'PLANNED TG',
-'• Pack 4: '+(pack?'+100 TG ($19.99)':'not included'),
+'• Pack 2: '+(pack2?'+30 TG ($4.99)':'not selected'),
+'• Pack 3: '+(pack3?'+60 TG ($9.99)':'not selected'),
+'• Pack 4: '+(pack4?'+100 TG ($19.99)':'not selected'),
 '• Weekly Card: '+(weekly?'+20 now + '+fmt(12*claims)+' from '+claims+' daily claim(s) ($4.99)':'not included'),
 '• Other TG: +'+fmt(othersTG),
 '✅ TG projected before KvK: '+fmt(pTG)+' / 3,945',
@@ -80,9 +85,10 @@ const lines=[
 '➡️ Hammers still needed: '+fmt(hamShort),
 '',
 'TOP-UP',
-'• Current + qualifying plans: '+fmt(topup)+' / 30,000',
+'• Already earned: '+fmt(v('topup'))+' points',
+'• After selected future purchases: '+fmt(topup)+' / 30,000',
 '• Points to skin milestone: '+fmt(Math.max(0,30000-topup)),
-'• Known new purchases: $'+((pack?19.99:0)+(weekly?4.99:0)).toFixed(2),
+'• Known new purchases: $'+plannedCost.toFixed(2),
 '',
 'FEAST: Farm bags, cook Daily Specials, claim hammer milestones.',
 'KVK: Save TG builds, widgets, hammers & speedups for eligible score days.',
@@ -91,7 +97,7 @@ const lines=[
 ];$('summary').value=lines.join('\n');
 }
 $('copy').addEventListener('click',async()=>{let ta=$('summary');try{await navigator.clipboard.writeText(ta.value);$('copyStatus').textContent='Copied! Paste into Discord.'}catch(e){ta.focus();ta.select();try{document.execCommand('copy');$('copyStatus').textContent='Copied! Paste into Discord.'}catch(e2){$('copyStatus').textContent='Text selected. Use your device Copy command.'}}});
-$('reset').addEventListener('click',()=>{for(const[id,initial]of pairs){$(id+'Num').value=initial;$(id+'Slider').value=initial}['pack4','weekly','fair','arena'].forEach(id=>$(id).checked=false);calculate();$('copyStatus').textContent='Reset to working estimates.'});
+$('reset').addEventListener('click',()=>{for(const[id,initial]of pairs){$(id+'Num').value=initial;$(id+'Slider').value=initial}['pack2','pack3','pack4','weekly','fair','arena'].forEach(id=>$(id).checked=false);calculate();$('copyStatus').textContent='Reset to zero. No purchases selected.'});
 calculate();
 })();
 </script></body></html>
