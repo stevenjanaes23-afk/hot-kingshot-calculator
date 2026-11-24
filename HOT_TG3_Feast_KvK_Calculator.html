@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HOT • TG3, Feast & KvK Calculator</title>
+<style>
+:root{color-scheme:dark;--bg:#0c1017;--panel:#181f2b;--panel2:#222c3b;--line:#344052;--txt:#f3f5f8;--sub:#aeb9c9;--red:#f05a57;--gold:#ffc46a;--green:#75d6a8;--blue:#80c8ff}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% -200px,#3f1925 0,transparent 58%),var(--bg);color:var(--txt);font:15px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}main{max-width:860px;margin:auto;padding:20px 14px 55px}header{margin:0 0 16px}h1{font-size:clamp(25px,6vw,37px);letter-spacing:-.035em;margin:4px 0}h2{font-size:17px;margin:0 0 13px}p{margin:6px 0;color:var(--sub)}.eyebrow{font-size:12px;font-weight:750;letter-spacing:.14em;color:var(--red)}.small{font-size:12px;color:var(--sub)}.panel{border:1px solid var(--line);background:var(--panel);border-radius:16px;padding:16px;margin:13px 0;box-shadow:0 7px 25px #0003}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.stat{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:13px}.stat .v{font-size:clamp(22px,4.3vw,30px);font-weight:800;line-height:1.2;letter-spacing:-.02em}.stat .label{font-size:12px;color:var(--sub);margin-bottom:6px}.stat .detail{font-size:12px;color:var(--sub);margin-top:3px}.good{color:var(--green)}.gold{color:var(--gold)}.red{color:#ff9393}.inputrow{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:13px 0 3px}.inputrow label{font-weight:650}.inputrow input[type=number]{width:114px;flex:none;padding:8px 9px;border:1px solid var(--line);background:#0e1521;color:var(--txt);border-radius:9px;font-size:16px;font-weight:750;text-align:right}.slider{width:100%;accent-color:var(--red);cursor:pointer;height:25px;margin:0}.hint{color:var(--sub);font-size:12px;margin:-2px 0 8px}.checks{display:grid;gap:9px}.check{display:flex;gap:11px;align-items:flex-start;background:var(--panel2);padding:11px;border:1px solid var(--line);border-radius:11px;cursor:pointer}.check input{width:19px;height:19px;accent-color:var(--red);flex-shrink:0;margin:2px 0 0}.check b{display:block}.check span{font-size:12px;color:var(--sub);display:block}.progress{height:10px;border-radius:40px;background:#0a111e;overflow:hidden;margin:11px 0 5px}.progress>div{height:100%;background:linear-gradient(90deg,#bf3647,#ef9b63);width:0;border-radius:40px;transition:width .2s}.line{border:0;border-top:1px solid var(--line);margin:14px 0}.pair{display:flex;justify-content:space-between;gap:12px;margin:9px 0}.pair span{color:var(--sub)}.pair strong{text-align:right}.pill{display:inline-block;padding:4px 9px;border:1px solid #744650;border-radius:99px;background:#3b1f2c;color:#ffb1aa;font-size:12px;font-weight:750}.inline-note{border-left:3px solid var(--gold);padding:7px 11px;color:#e7d1b2;font-size:12px;background:#342b24;border-radius:2px 10px 10px 2px}.button{font:inherit;font-weight:800;border:0;background:var(--red);color:#1d1215;padding:13px 17px;border-radius:11px;cursor:pointer;min-height:46px}.button.secondary{background:#303b4d;color:var(--txt)}.actions{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}textarea{width:100%;min-height:265px;resize:vertical;background:#0a111e;color:#eaf0fa;border:1px solid var(--line);border-radius:11px;padding:12px;font:12.5px/1.5 ui-monospace,Consolas,monospace}footer{margin-top:14px;font-size:12px;color:var(--sub)}@media(max-width:370px){.grid{grid-template-columns:1fr}.inputrow{align-items:start}.inputrow label{max-width:65%}}@media(min-width:720px){.cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}.cols .panel{margin-top:0}}
+</style>
+</head>
+<body><main>
+<header><div class="eyebrow">🔥 HOT ALLIANCE • KINGDOM #2487</div><h1>TG3 + Feast + KvK Calculator</h1><p>Slide to update your inventory. The plan and Discord-ready message recalculate instantly.</p><div class="pill">Pack 2 + Pack 3 already included • Pack 4 not purchased</div></header>
+<section class="panel"><h2>🎯 Your live inventory</h2>
+<div class="inputrow"><label for="tgNum">Current Truegold</label><input type="number" id="tgNum" min="0" max="20000" step="1" value="979"></div><input class="slider" type="range" id="tgSlider" min="0" max="6000" step="1" value="979"><div class="hint">Working estimate: 919 reported + 60 from purchased Pack 3. Edit if your game shows a different total.</div>
+<div class="inputrow"><label for="hamNum">Current Forgehammers</label><input type="number" id="hamNum" min="0" max="10000" step="1" value="395"></div><input class="slider" type="range" id="hamSlider" min="0" max="1000" step="1" value="395"><div class="hint">Last confirmed: 395. Change this after any new Bear Trap or other rewards.</div>
+<div class="grid"><div class="stat"><div class="label">Need for TG3 now</div><div class="v gold" id="tgNeedNow">2,966</div><div class="detail">Estimated minimum full building route: 3,945 TG</div></div><div class="stat"><div class="label">Need for 500 hammers now</div><div class="v gold" id="hamNeedNow">105</div><div class="detail">Before planned rewards or purchases</div></div></div>
+</section>
+<div class="cols"><section class="panel"><h2>🛒 Purchases & Truegold</h2><div class="checks">
+<label class="check"><input type="checkbox" id="pack4"><div><b>Autumn Blessing Pack 4 — $19.99</b><span>+100 TG, 220 Feast Bags, 32 Harvest chests, 60h speedups, +10,000 Top-up points</span></div></label>
+<label class="check"><input type="checkbox" id="weekly"><div><b>Renew TG Weekly Card — $4.99</b><span>When available: +20 TG immediately, then +12 TG per daily claim. +2,500 Top-up points</span></div></label>
+</div>
+<div class="inputrow"><label for="dailyNum">New weekly-card daily claims before KvK</label><input type="number" id="dailyNum" min="0" max="7" value="5"></div><input class="slider" type="range" id="dailySlider" min="0" max="7" value="5"><div class="hint">Used only if Weekly Card is checked. Up to seven claims in total; number before Prep depends on your actual reset timing.</div>
+<div class="inputrow"><label for="extraTgNum">Other Truegold from packs/rewards</label><input type="number" id="extraTgNum" min="0" max="50000" value="0"></div><input class="slider" type="range" id="extraTgSlider" min="0" max="5000" step="1" value="0"><div class="hint">Add Pack 5 or other deals here only after you know the actual quantity. Don't double-count purchases already in your current balance.</div>
+</section><section class="panel"><h2>🔨 Hammers before KvK</h2>
+<div class="inputrow"><label for="bearsNum">Bear Traps still to collect</label><input type="number" id="bearsNum" min="0" max="10" value="3"></div><input class="slider" type="range" id="bearsSlider" min="0" max="6" value="3"><div class="hint">10 hammers per trap. Default: Nov 25, 27, 29; remove any already counted in inventory.</div>
+<div class="inputrow"><label for="feastNum">Feast 3-hammer daily chests</label><input type="number" id="feastNum" min="0" max="7" value="0"></div><input class="slider" type="range" id="feastSlider" min="0" max="7" value="0"><div class="hint">Count only milestones you expect to complete and claim before KvK.</div>
+<div class="checks"><label class="check"><input type="checkbox" id="fair"><div><b>Champagne Fair (+10 hammers)</b><span>Costs 5,000 vouchers; assumes all 10 remain available</span></div></label><label class="check"><input type="checkbox" id="arena"><div><b>Arena Shop (+5 hammers)</b><span>Only if purchase limit and tokens are available</span></div></label></div>
+<div class="inputrow"><label for="extraHamNum">Other hammer packs/rewards</label><input type="number" id="extraHamNum" min="0" max="10000" value="0"></div><input class="slider" type="range" id="extraHamSlider" min="0" max="200" value="0"><div class="hint">Add confirmed hammer packs and other sources; don't count delayed rewards early.</div>
+</section></div>
+<section class="panel"><h2>📊 Projected totals</h2><div class="grid"><div class="stat"><div class="label">Projected Truegold before KvK</div><div class="v gold" id="tgProjected">979</div><div class="detail" id="tgLeft">2,966 still needed for TG3</div><div class="progress"><div id="tgBar"></div></div></div><div class="stat"><div class="label">Projected hammers before KvK</div><div class="v gold" id="hamProjected">425</div><div class="detail" id="hamLeft">75 still needed for 500</div><div class="progress"><div id="hamBar"></div></div></div></div>
+<hr class="line"><div class="pair"><span>Truegold after full 7-day card, if selected</span><strong id="tgFullCard">979</strong></div><div class="pair"><span>Top-up points (starting at 15,000)</span><strong id="topupVal">15,000</strong></div><div class="pair"><span>Remaining to 30,000-point skin tier</span><strong id="topupLeft">15,000</strong></div><div class="pair"><span>Known planned pack spend</span><strong id="cost">$0.00</strong></div><div class="pair"><span>Feast Bags from unbought Pack 4</span><strong id="bags">0</strong></div><div class="inline-note">The 3,945-TG route assumes required buildings are already level 30 and no Truegold stages have been completed. Confirm costs and prerequisites in game before spending.</div></section>
+<section class="panel"><h2>⚔️ KvK score reference</h2><div class="pair"><span>Full 3,945 TG, at 2,000 pts each</span><strong>7,890,000</strong></div><div class="pair"><span>500 hammers, at 4,000 pts each</span><strong>2,000,000</strong></div><div class="pair"><span>70 widgets (Marlin 50 + Hilde 20), at 8,000 pts</span><strong>560,000</strong></div><div class="pair"><span>10 Mithril, at 40,000 pts each</span><strong>400,000</strong></div><hr class="line"><div class="pair"><b>Full theoretical total</b><strong class="gold">10,850,000 points</strong></div><p class="small">Reference only, using previously discussed point rates. You score only by spending on eligible stages, with the required construction speedups, gear and materials. This is not a ranking guarantee.</p></section>
+<section class="panel"><h2>📋 Copy your updated HOT plan</h2><p class="small">The text below stays in sync with every slider and checkbox. Copy it directly to Discord or another chat.</p><textarea id="summary" aria-label="Copyable plan text" spellcheck="false" readonly></textarea><div class="actions"><button class="button" id="copy">📋 Copy summary</button><button class="button secondary" id="reset">↺ Reset sliders</button></div><div class="small" id="copyStatus" aria-live="polite"></div></section>
+<footer>Standalone offline calculator. No login or web connection required. Your slider settings remain in this page only and do not change your Kingshot inventory.</footer>
+</main><script>
+(()=>{'use strict';
+const $=id=>document.getElementById(id), fmt=n=>Math.round(n).toLocaleString('en-US');
+const pairs=[['tg',979,0,20000],['ham',395,0,10000],['daily',5,0,7],['extraTg',0,0,50000],['bears',3,0,10],['feast',0,0,7],['extraHam',0,0,10000]];
+function numberValue(id){let n=Number($(id+'Num').value);return Number.isFinite(n)?Math.max(0,Math.floor(n)):0}
+function clamp(n,min,max){return Math.min(max,Math.max(min,n))}
+for(const [id,initial,min,max] of pairs){let num=$(id+'Num'),slider=$(id+'Slider');num.addEventListener('input',()=>{if(num.value==='')return;let n=clamp(numberValue(id),min,max);slider.value=clamp(n,Number(slider.min),Number(slider.max));calculate()});num.addEventListener('change',()=>{num.value=clamp(numberValue(id),min,max);slider.value=clamp(Number(num.value),Number(slider.min),Number(slider.max));calculate()});slider.addEventListener('input',()=>{num.value=slider.value;calculate()})}
+['pack4','weekly','fair','arena'].forEach(id=>$(id).addEventListener('change',calculate));
+function calculate(){const v=id=>numberValue(id),pack=$('pack4').checked,weekly=$('weekly').checked,fair=$('fair').checked,arena=$('arena').checked;
+const tg=v('tg'),ham=v('ham'),claims=clamp(v('daily'),0,7),othersTG=v('extraTg'),othersHam=v('extraHam');
+const pTG=tg+(pack?100:0)+(weekly?20+12*claims:0)+othersTG;
+const allTG=tg+(pack?100:0)+(weekly?104:0)+othersTG;
+const pHam=ham+v('bears')*10+v('feast')*3+(fair?10:0)+(arena?5:0)+othersHam;
+const topup=15000+(pack?10000:0)+(weekly?2500:0);
+$('tgNeedNow').textContent=fmt(Math.max(0,3945-tg));$('hamNeedNow').textContent=fmt(Math.max(0,500-ham));
+$('tgProjected').textContent=fmt(pTG);$('hamProjected').textContent=fmt(pHam);
+const tgShort=Math.max(0,3945-pTG),hamShort=Math.max(0,500-pHam);
+$('tgLeft').textContent=tgShort?fmt(tgShort)+' still needed for TG3':'TG3 Truegold target reached (+ '+fmt(pTG-3945)+')';
+$('hamLeft').textContent=hamShort?fmt(hamShort)+' still needed for 500':'500-hammer target reached (+ '+fmt(pHam-500)+')';
+$('tgBar').style.width=Math.min(100,pTG/3945*100)+'%';$('hamBar').style.width=Math.min(100,pHam/500*100)+'%';
+$('tgFullCard').textContent=fmt(allTG);$('topupVal').textContent=fmt(topup);$('topupLeft').textContent=fmt(Math.max(0,30000-topup));
+$('cost').textContent='$'+((pack?19.99:0)+(weekly?4.99:0)).toFixed(2);$('bags').textContent=pack?'220':'0';
+const lines=[
+'🔥 HOT | TG3 + FEAST + KvK PLAN',
+'Kingdom #2487 • TC30 → TG3',
+'',
+'CURRENT INVENTORY',
+'🪙 Truegold: '+fmt(tg)+' / 3,945 (need '+fmt(Math.max(0,3945-tg))+')',
+'🔨 Hammers: '+fmt(ham)+' / 500 (need '+fmt(Math.max(0,500-ham))+')',
+'',
+'PLANNED TG',
+'• Pack 4: '+(pack?'+100 TG ($19.99)':'not included'),
+'• Weekly Card: '+(weekly?'+20 now + '+fmt(12*claims)+' from '+claims+' daily claim(s) ($4.99)':'not included'),
+'• Other TG: +'+fmt(othersTG),
+'✅ TG projected before KvK: '+fmt(pTG)+' / 3,945',
+'➡️ TG still needed: '+fmt(tgShort),
+'• After full weekly card: '+fmt(allTG)+' TG',
+'',
+'PLANNED HAMMERS',
+'• '+v('bears')+' Bear Trap(s) × 10 = +'+fmt(v('bears')*10),
+'• '+v('feast')+' Feast milestone(s) × 3 = +'+fmt(v('feast')*3),
+'• Champagne Fair: '+(fair?'+10':'not included'),
+'• Arena Shop: '+(arena?'+5':'not included'),
+'• Other: +'+fmt(othersHam),
+'✅ Hammers projected: '+fmt(pHam)+' / 500',
+'➡️ Hammers still needed: '+fmt(hamShort),
+'',
+'TOP-UP',
+'• Current + qualifying plans: '+fmt(topup)+' / 30,000',
+'• Points to skin milestone: '+fmt(Math.max(0,30000-topup)),
+'• Known new purchases: $'+((pack?19.99:0)+(weekly?4.99:0)).toFixed(2),
+'',
+'FEAST: Farm bags, cook Daily Specials, claim hammer milestones.',
+'KVK: Save TG builds, widgets, hammers & speedups for eligible score days.',
+'KVK theoretical full-target score: 10.85M (only if all materials are spent on eligible upgrades).',
+'⚠️ Figures are projections. Verify shop offers, prerequisites & event scoring.'
+];$('summary').value=lines.join('\n');
+}
+$('copy').addEventListener('click',async()=>{let ta=$('summary');try{await navigator.clipboard.writeText(ta.value);$('copyStatus').textContent='Copied! Paste into Discord.'}catch(e){ta.focus();ta.select();try{document.execCommand('copy');$('copyStatus').textContent='Copied! Paste into Discord.'}catch(e2){$('copyStatus').textContent='Text selected. Use your device Copy command.'}}});
+$('reset').addEventListener('click',()=>{for(const[id,initial]of pairs){$(id+'Num').value=initial;$(id+'Slider').value=initial}['pack4','weekly','fair','arena'].forEach(id=>$(id).checked=false);calculate();$('copyStatus').textContent='Reset to working estimates.'});
+calculate();
+})();
+</script></body></html>
